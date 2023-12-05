@@ -42,7 +42,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 APPEND_SLASH = False
 ALLOWED_HOSTS = ['c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','54.194.168.187']
-CSRF_TRUSTED_ORIGINS = ['http://c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','http://54.194.168.187']
+CSRF_TRUSTED_ORIGINS = ['https://c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','http://54.194.168.187']
 
 
 # Application definition
