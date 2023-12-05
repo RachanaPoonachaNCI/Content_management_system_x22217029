@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from . import models
 
 
-# Create your views here.
+#Creating views
 @csrf_exempt
 def login_api(request):
     if request.method == "POST":
