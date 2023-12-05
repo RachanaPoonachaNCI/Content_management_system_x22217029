@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import dj_database_url
 
-load_dotenv()
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-ymkxt3lbku#6!6(p&bia6%-#(3wj^sk60f@r+qey)q(@g2eeiq
 DEBUG = True
 
 
-# This is to configure the settnigs for serving static files
+# This is to configure the settings for serving static files
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "")
 
@@ -41,8 +41,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 APPEND_SLASH = False
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','54.194.168.187']
+CSRF_TRUSTED_ORIGINS = ['http://c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','http://54.194.168.187']
 
 
 # Application definition
@@ -95,13 +95,25 @@ WSGI_APPLICATION = "content_management.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
+from aws_services.get_db_secret import get_secret
+database_secret =  get_secret()
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': database_secret['dbname'],
+            'USER': database_secret['username'],
+            'PASSWORD': database_secret['your_password_key'],
+            'HOST' : 'x22217029-postgres-db-devsecops.chwlezgyi7rm.eu-west-1.rds.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
