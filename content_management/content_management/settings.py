@@ -41,8 +41,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 APPEND_SLASH = False
-ALLOWED_HOSTS = ['c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','54.194.168.187','34.240.9.211','x22217029ContentDevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com']
-CSRF_TRUSTED_ORIGINS = ['https://c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','http://54.194.168.187','http://34.240.9.211','http://x22217029ContentDevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','54.194.168.187','34.240.9.211','x22217029ContentDevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com','x22217029contentdevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com']
+CSRF_TRUSTED_ORIGINS = ['https://c538a7940a044a449b3f53e560c564fb.vfs.cloud9.eu-west-1.amazonaws.com','http://54.194.168.187','http://34.240.9.211','http://x22217029ContentDevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com','http://x22217029contentdevsecops-env.eba-pqae37np.eu-west-1.elasticbeanstalk.com']
 
 
 # Application definition
