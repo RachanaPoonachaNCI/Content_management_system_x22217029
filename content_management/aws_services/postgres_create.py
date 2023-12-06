@@ -6,7 +6,7 @@ def create_rds_instance(secretPassword):
     db_instance_class = 'db.t3.micro'
     db_name = 'ContentManager'
     master_username = 'x22217029'
-    secret_name = 'x22217029-energy-tracker-postgres-secret'
+    secret_name = 'x22217029-postgres-devsecops'
     allocated_storage = 20
     security_group_ids = ['sg-08951623fb0f48bea']
 
